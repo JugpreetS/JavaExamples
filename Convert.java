@@ -20,8 +20,16 @@ class Convert{
 
 		StringBuffer s = new StringBuffer();
 
-		for(int i = str.length()-1; i >= 0; i--){
-
+		for(int i = newStr.length()-1; i >= 0; i--){
+                if(tempCount == 0){
+                    s.append("-");
+                    tempCount = k;
+                }
+                s.append(newStr.charAt(i));
+                tempCount--;
 		}
+		s=s.reverse();
+		
+		return s.toString().toUpperCase();
 	}
 }
